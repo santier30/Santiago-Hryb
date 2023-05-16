@@ -1,0 +1,43 @@
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background:
+    linear-gradient(
+        to right,
+        rgba($primary-color,0.9),
+        rgba($primary-color,0.3)
+    ),
+    url("../img/Code.jpg") center top;
+    background-size: cover;
+    color: set-text-color(rgba($primary-color,0.3));
+    b{
+        color: $secondary-color;
+    }
+    article{
+        width: 90%;
+    }
+    
+}
+.home_subtitle{
+    margin-bottom: .5rem;
+    border-bottom: 3px solid white;
+}
+@include media-md{
+    .home{
+        #{&}_title{
+            font-size:2rem ;
+        };
+        #{&}_subtitle{
+            font-size:3rem ;
+
+        };
+        #{&}_paragraf{
+            font-size:1.5rem ;
+
+        };
+
+    }
+} 

@@ -1,0 +1,75 @@
+.contacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: left;
+    background:
+    linear-gradient(
+        to right,
+        rgba($primary-color,0.9),
+        rgba($primary-color,0.3)
+    ),
+    url("../img/Code.jpg") center top;
+    background-size: cover;
+    color: set-text-color(rgba($primary-color,0.3));
+    b{
+        color: $secondary-color;
+    }
+    h1{
+        margin-bottom: 2rem;
+    }
+    #{&}_subtitle{
+    margin-bottom: .2rem;
+};
+#{&}_contacts{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    div a{
+        color: $secondary-color !important;
+    }
+}
+}
+
+@include media-lg{
+    .contacts{
+        #{&}_contacts{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+
+        }
+        #{&}_subtitle{
+            font-size: 1.8rem;
+        };
+        h1{
+            font-size: 2.5rem;
+        };
+        div a{
+            font-size: 1.2rem;
+        };
+    }
+  
+   
+  }
+  @include media-xl{
+    .contacts{
+        #{&}_contacts{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        #{&}_subtitle{
+            font-size: 2rem;
+        };
+        h1{
+            font-size: 3rem;
+        };
+        div a{
+            font-size: 1.4rem;
+        };
+    }
+  
+   
+  }
+

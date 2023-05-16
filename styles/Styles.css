@@ -1,0 +1,430 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  height: 54px;
+  top: 0%;
+  justify-content: flex-end;
+  z-index: 10;
+}
+.nav .nav_menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.6862745098);
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(-100%);
+}
+.nav .show {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav .nav_Link {
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  text-decoration: none;
+  font-size: 2rem;
+}
+.nav .nav_Link:hover {
+  -webkit-text-decoration: underline rgb(255, 101, 47);
+          text-decoration: underline rgb(255, 101, 47);
+}
+.nav .nav_li {
+  transform: translateX(220%);
+  transition: all 0.5s ease-in-out;
+}
+.nav .apere {
+  transform: translateX(0);
+}
+.nav .active {
+  -webkit-text-decoration: underline rgb(255, 101, 47);
+          text-decoration: underline rgb(255, 101, 47);
+}
+.nav .nav_hamburger {
+  position: absolute;
+  top: 0.9rem;
+  right: 0;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 1rem;
+  z-index: 100;
+  color: #fff;
+}
+.nav .open:before {
+  content: "\f00d";
+}
+.nav .close:before {
+  content: "\f0c9";
+}
+
+.apere:nth-child(1) {
+  transition-delay: 0.13s;
+}
+
+.apere:nth-child(2) {
+  transition-delay: 0.21s;
+}
+
+.apere:nth-child(3) {
+  transition-delay: 0.29s;
+}
+
+.apere:nth-child(4) {
+  transition-delay: 0.37s;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    justify-content: center;
+    height: auto;
+  }
+  .nav .nav_menu {
+    visibility: visible;
+    opacity: 1;
+    flex-direction: row;
+    background-color: transparent;
+    position: initial;
+    gap: 0;
+    transform: translateY(0);
+  }
+  .nav .nav_li {
+    transform: translateX(0);
+  }
+  .nav .nav_Link {
+    font-size: 1.5rem;
+    padding: 1.1rem;
+  }
+  .nav .nav_hamburger {
+    display: none !important;
+  }
+}
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/Code.jpg") center top;
+  background-size: cover;
+  color: #fff;
+}
+.home b {
+  color: rgb(255, 101, 47);
+}
+.home article {
+  width: 90%;
+}
+
+.home_subtitle {
+  margin-bottom: 0.5rem;
+  border-bottom: 3px solid white;
+}
+
+@media screen and (min-width: 768px) {
+  .home .home_title {
+    font-size: 2rem;
+  }
+  .home .home_subtitle {
+    font-size: 3rem;
+  }
+  .home .home_paragraf {
+    font-size: 1.5rem;
+  }
+}
+.About {
+  display: flex;
+  flex-direction: column;
+}
+.About .About_bio {
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/Code.jpg") center top;
+  background-size: cover;
+  color: #fff;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+.About .About_title {
+  color: rgb(255, 101, 47);
+}
+.About .About_biography {
+  margin-bottom: 2rem;
+}
+.About .About_experience {
+  min-height: 50vh;
+  background-color: rgba(0, 0, 0, 0.849);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+.About .About_experience h2 {
+  color: rgb(255, 101, 47);
+}
+.About .About_experience h2, .About .About_experience h3 {
+  margin: 0.5rem 0;
+}
+.About .About_experience div {
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgb(51, 50, 50);
+  border-bottom: solid 5px rgb(255, 101, 47);
+}
+
+@media screen and (min-width: 1024px) {
+  .About .About_biography {
+    font-size: 1.1rem;
+  }
+  .About .About_title {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .About .About_biography {
+    font-size: 1.4rem;
+  }
+  .About .About_title {
+    font-size: 2.4rem;
+  }
+  .About .About_experience h2 {
+    font-size: 2rem;
+  }
+  .About .About_experience h3 {
+    font-size: 1.4rem;
+  }
+  .About .About_experience div h4 {
+    font-size: 1.3rem;
+  }
+  .About .About_experience p {
+    font-size: 1.1rem;
+  }
+}
+.project {
+  display: flex;
+  flex-direction: column;
+}
+.project .project_home {
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/Code.jpg") center top;
+  background-size: cover;
+  color: #fff;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+.project .project_title {
+  color: rgb(255, 101, 47);
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+.project .project_experience {
+  min-height: 70vh;
+  background-color: rgba(0, 0, 0, 0.849);
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+.project .project_experience h2 {
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.project .project_img {
+  width: 100%;
+}
+.project .project_div {
+  width: 70%;
+  max-width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: rgb(51, 50, 50);
+  border-bottom: solid 5px rgb(255, 101, 47);
+  position: relative;
+}
+.project .project_buttons {
+  position: absolute;
+  top: 0;
+  display: flex;
+  gap: 20%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+.project .project_buttons::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 0%;
+  width: 100%;
+  background: rgb(39, 39, 39);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.project .project_buttons a {
+  z-index: 2;
+  margin-bottom: 27px;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+}
+.project .project_buttons:hover::after {
+  top: 0;
+  opacity: 0.9;
+  height: 100%;
+}
+.project .project_buttons:hover a {
+  display: block;
+  visibility: visible;
+}
+
+@media screen and (min-width: 1024px) {
+  .project .project_experience {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .project .project_div {
+    max-width: 600px;
+  }
+  .project .project_home {
+    height: 40vh;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .project .project_experience {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .project .project_div {
+    max-width: 800px;
+  }
+  .project .project_home {
+    height: 50vh;
+  }
+}
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: left;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/Code.jpg") center top;
+  background-size: cover;
+  color: #fff;
+}
+.contacts b {
+  color: rgb(255, 101, 47);
+}
+.contacts h1 {
+  margin-bottom: 2rem;
+}
+.contacts .contacts_subtitle {
+  margin-bottom: 0.2rem;
+}
+.contacts .contacts_contacts {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.contacts .contacts_contacts div a {
+  color: rgb(255, 101, 47) !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .contacts .contacts_contacts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .contacts .contacts_subtitle {
+    font-size: 1.8rem;
+  }
+  .contacts h1 {
+    font-size: 2.5rem;
+  }
+  .contacts div a {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .contacts .contacts_contacts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contacts .contacts_subtitle {
+    font-size: 2rem;
+  }
+  .contacts h1 {
+    font-size: 3rem;
+  }
+  .contacts div a {
+    font-size: 1.4rem;
+  }
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 0;
+  color: #fff;
+}
+.footer .footer__media {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: -0.5rem;
+}
+.footer .footer__media a {
+  color: #fff;
+  font-size: 2rem;
+}
+.footer .footer__media a:hover {
+  color: rgb(255, 101, 47);
+}
+.footer .footer__copy {
+  display: flex;
+  align-items: end;
+  position: absolute;
+  bottom: 5rem;
+  right: -3.5rem;
+  transform: rotate(90deg);
+  translate: -3rem, -5rem;
+}/*# sourceMappingURL=Styles.css.map */
